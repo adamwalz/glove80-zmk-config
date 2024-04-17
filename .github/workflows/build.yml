@@ -3,6 +3,11 @@ name: Build
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - 'keymap-drawer/**'
+      - '.github/workflows/draw-keymap.yml'
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
@@ -16,9 +21,11 @@ jobs:
           submodules: recursive
       - uses: actions/checkout@v4
         with:
-          repository: moergo-sc/zmk
-          ref: main
+          repository: bryanforbes/zmk
+          ref: bryanforbes
           path: src
+          fetch-depth: 0
+
       - uses: cachix/install-nix-action@v25
         with:
           nix_path: nixpkgs=channel:nixos-22.05
@@ -26,14 +33,54 @@ jobs:
         with:
           name: moergo-glove80-zmk-dev
           skipPush: true
+      - name: Generate firmware version
+        id: firmware-version
+        run: |
+          FW_VERSION=$(date -u +"%y.%m.%d-%H%M")
+          echo "version=${FW_VERSION}" >> "$GITHUB_OUTPUT"
       - name: Build Glove80 combined firmware
-        run: nix-build config -o combined
+        run: nix-build config -o combined --argstr fwversion ${{ steps.firmware-version.outputs.version }}
       - name: Copy result out of nix store
-        if: github.event_name != 'pull_request'
-        run: cp combined/glove80.uf2 glove80.uf2
+        run: |
+          cp combined/glove80.uf2 "glove80_${{ steps.firmware-version.outputs.version }}.uf2"
+      - name: Glove80 Left Kconfig file
+        if: ${{ !cancelled() }}
+        run: |
+          if [ -f "combined/zmk_glove80_lh.config" ]; then
+            grep -v -e "^#" -e "^$" "combined/zmk_glove80_lh.config" | sort
+          else
+            echo "No Kconfig output"
+          fi
+      - name: Glove80 Right Kconfig file
+        if: ${{ !cancelled() }}
+        run: |
+          if [ -f "combined/zmk_glove80_rh.config" ]; then
+            grep -v -e "^#" -e "^$" "combined/zmk_glove80_rh.config" | sort
+          else
+            echo "No Kconfig output"
+          fi
+      - name: Glove80 Left Devicetree file
+        if: ${{ !cancelled() }}
+        run: |
+          if [ -f "combined/zmk_glove80_lh.zephyr.dts" ]; then
+            cat "combined/zmk_glove80_lh.zephyr.dts"
+          elif [ -f "combined/zmk_glove80_lh.zephyr.dts.pre" ]; then
+            cat "combined/zmk_glove80_lh.zephyr.dts.pre"
+          else
+            echo "No Devicetree output"
+          fi
+      - name: Glove80 Right Devicetree file
+        if: ${{ !cancelled() }}
+        run: |
+          if [ -f "combined/zmk_glove80_rh.zephyr.dts" ]; then
+            cat "combined/zmk_glove80_rh.zephyr.dts"
+          elif [ -f "combined/zmk_glove80_rh.zephyr.dts.pre" ]; then
+            cat "combined/zmk_glove80_rh.zephyr.dts.pre"
+          else
+            echo "No Devicetree output"
+          fi
       - name: Upload result
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
-          name: glove80.uf2
-          path: glove80.uf2
+          name: glove80_${{ steps.firmware-version.outputs.version }}.uf2
+          path: glove80_${{ steps.firmware-version.outputs.version }}.uf2
