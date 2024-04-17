@@ -10,6 +10,12 @@ These steps will get you using your keymap on your keyboard in the fastest time 
 
 If you are looking to dig deeper into ZMK and develop new functionality, it is recommended to follow the steps of installing ZMK as found on the official ZMK documentation site (linked below).
 
+## Keymap
+
+The following representation was generated with [`keymap-drawer`](https://github.com/caksoylar/keymap-drawer):
+
+![Glove80 layout](./keymap-drawer/glove80.svg)
+
 ## Resources
 - The [official MoErgo Glove80 Support](https://moergo.com/glove80-support) web site. Glove80 documentation and other technical resources.
 - The [official MoErgo Discord Server](https://moergo.com/discord). Instant conversations with other Glove80 users.
@@ -21,7 +27,7 @@ If you are looking to dig deeper into ZMK and develop new functionality, it is r
  
 ## Instructions
 1. Log into, or sign up for, your personal GitHub account.
-2. Create your own repository using this repository as a template ([instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)) and check it out on your local computer.
+2. Create your own repository using this repository as a template ([instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template])) and check it out on your local computer.
 3. Edit the keymap file(s) to suit your needs
 4. Commit and push your changes to your personal repo. Upon pushing it, GitHub Actions will start building a new version of your firmware with the updated keymap.
 
