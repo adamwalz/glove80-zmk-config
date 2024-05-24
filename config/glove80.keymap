@@ -145,7 +145,6 @@ ZMK_BEHAVIOR(bt_sel, macro_one_param,
 #define MAGIC   4
 
 #define TO_MAGIC  &magic MAGIC 0
-#define IN_SRC    &kp LG(LS(LC(SPACE)))
 #define MIC_MUTE  &kp LG(LA(LCTRL))
 #define ONEPASS   &kp LG(LS(SPACE))
 #define RAYCAST   &kp LG(SPACE)
@@ -168,7 +167,7 @@ GLV80_LAYER(Base,
 // ╰───────────────┴────────────────────┴───────────────────┴───────────────────┴─────────────────────╯                     ╰─────────────────────┴───────────────────┴─────────────────────┴───────────────────────┴───────────╯
                                                                                                                  ,
 //                                                              ╭─────────────┬──────────────────┬──────────╮         ╭───────────┬───────────────┬─────────────────────╮
-                                                                  &smart_shft   IN_SRC             EMOJI                ONEPASS     RAYCAST         &kp RET
+                                                                  &smart_shft   XXX                EMOJI                ONEPASS     RAYCAST         &kp RET
 /*                                                              ├─────────────┼──────────────────┼──────────┤ */ , /* ├───────────┼───────────────┼─────────────────────┤ */
                                                                   &kp TAB       &thumb LOWER ESC   MIC_MUTE             &to MOUSE   &kp BACKSPACE   &space SYMBOL SPACE
 //                                                              ╰─────────────┴──────────────────┴──────────╯         ╰───────────┴───────────────┴─────────────────────╯
