@@ -9,8 +9,8 @@ layers:
   - $$mdi:volume-low$$
   - $$mdi:volume-medium$$
   - $$mdi:volume-high$$
-  - F9
-  - $$mdi:monitor-screenshot$$
+  - F11
+  - F12
   - '`'
   - '1'
   - '2'
@@ -54,11 +54,11 @@ layers:
   - V
   - B
   - Smart Shift
-  - $$mdi:web$$
+  - ''
   - $$mdi:emoticon-happy-outline$$
-  - $$mdi:lock-outline$$
-  - $$mdi:magnify$$
-  - $$mdi:keyboard-return$$
+  - Gui+Sft+ $$mdi:keyboard-space$$
+  - Gui+ $$mdi:keyboard-space$$
+  - $$mdi:keyboard-tab$$
   - N
   - M
   - ','
@@ -70,11 +70,11 @@ layers:
   - End
   - $$mdi:arrow-left$$
   - $$mdi:arrow-right$$
-  - $$mdi:keyboard-tab$$
-  - {t: Esc, h: Lower}
-  - $$mdi:microphone$$
-  - {t: Mouse, h: toggle}
   - $$mdi:backspace-outline$$
+  - {t: Esc, h: Lower}
+  - ''
+  - {t: Mouse, h: toggle}
+  - $$mdi:keyboard-return$$
   - {t: '$$mdi:keyboard-space$$', h: Symbol}
   - (
   - '['
@@ -178,7 +178,7 @@ layers:
   - (
   - )
   - ;
-  - .
+  - ','
   - ''
   - ''
   - ''
@@ -209,7 +209,7 @@ layers:
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-return$$
   - ''
-  - '~'
+  - '@'
   - <
   - '|'
   - '-'
@@ -227,14 +227,14 @@ layers:
   - ''
   - ''
   - ''
-  - '@'
+  - '~'
   - '&'
   - '['
   - ']'
   - +
   - '%'
-  - ;
   - ':'
+  - ;
   - ''
   - ''
   - {type: held}
