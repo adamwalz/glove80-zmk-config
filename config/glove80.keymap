@@ -146,7 +146,7 @@ ZMK_BEHAVIOR(bt_sel, macro_one_param,
 
 #define TO_MAGIC  &magic MAGIC 0
 #define ONEPASSWD &kp LG(LS(SPACE))
-#define RAYCAST   &kp LG(SPACE)
+#define SPOTLIGHT &kp LG(SPACE)
 #define EMOJI     &kp LG(LC(SPACE))
 
 GLV80_LAYER(Base,
@@ -165,7 +165,7 @@ GLV80_LAYER(Base,
 // ╰───────────────┴────────────────────┴───────────────────┴───────────────────┴─────────────────────╯                     ╰─────────────────────┴───────────────────┴─────────────────────┴───────────────────────┴───────────╯
                                                                                                                  ,
 //                                                              ╭─────────────┬──────────────────┬──────────╮         ╭───────────┬───────────────┬─────────────────────╮
-                                                                  &smart_shft   XXX                EMOJI                ONEPASSWD   RAYCAST         &kp RET
+                                                                  &smart_shft   XXX                EMOJI                ONEPASSWD   SPOTLIGHT       &kp RET
 /*                                                              ├─────────────┼──────────────────┼──────────┤ */ , /* ├───────────┼───────────────┼─────────────────────┤ */
                                                                   &kp TAB       &thumb LOWER ESC   XXX                  &to MOUSE   &kp BACKSPACE   &space SYMBOL SPACE
 //                                                              ╰─────────────┴──────────────────┴──────────╯         ╰───────────┴───────────────┴─────────────────────╯
