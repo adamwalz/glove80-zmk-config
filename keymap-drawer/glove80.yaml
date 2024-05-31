@@ -66,8 +66,8 @@ layers:
   - /
   - '='
   - $$mdi:auto-fix$$
-  - Home
-  - End
+  - ''
+  - ''
   - $$mdi:arrow-left$$
   - $$mdi:arrow-right$$
   - $$mdi:backspace-outline$$
@@ -80,7 +80,7 @@ layers:
   - '['
   - ']'
   - )
-  - PgDn
+  - ''
   Lower:
   - F1
   - F2
@@ -155,8 +155,8 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -275,7 +275,7 @@ layers:
   - ''
   - ''
   - {t: '$$mdi:arrow-up$$', h: '$$mdi:mouse$$'}
-  - {t: '$$mdi:arrow-up$$', h: '$$mdi:tire$$'}
+  - {t: '$$mdi:arrow-down$$', h: '$$mdi:tire$$'}
   - ''
   - ''
   - ''
@@ -305,7 +305,7 @@ layers:
   - ''
   - ''
   - ''
-  - {t: '$$mdi:arrow-down$$', h: '$$mdi:tire$$'}
+  - {t: '$$mdi:arrow-up$$', h: '$$mdi:tire$$'}
   - ''
   - ''
   - ''
